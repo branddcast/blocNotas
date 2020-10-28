@@ -1,0 +1,48 @@
+.card-Viajes{
+    background: yellowgreen;
+}
+.card-Comidas{
+    background: orange;
+}
+.card-Trabajo{
+    background: cornflowerblue;
+}
+.card-General{
+    background: whitesmoke;
+}
+
+.card-header{
+    font-weight: 600; 
+}
+
+.boton_html_tag{
+    padding: 5px 8px;
+    border: none;
+    background: transparent;
+}
+
+.boton_html_tag:hover,
+.boton_html_tag_active{
+    background-color: #e4e4e4;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.wf-container { margin: 0 auto; }
+
+.wf-container:before,
+.wf-container:after {
+  content: '';
+  display: table;
+}
+
+.wf-container:after { clear: both; }
+
+.wf-box { margin: 10px; }
+
+.wf-box .content {
+  border-top-width: 0;
+  padding: 5px 8px;
+}
+
+.wf-column { float: left; }

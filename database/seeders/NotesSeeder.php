@@ -19,7 +19,7 @@ class NotesSeeder extends Seeder
         DB::table('notes')->insert([
             [
                 'title' => Str::random(10),
-                'description' => Str::random(10)."[Bold]".Str::random(10)."[/Bold]",
+                'description' => Str::random(10)." [Bold]".Str::random(10)."[/Bold]",
                 'author' => 1,
                 'category' => 1,
                 'created_at' => now(),
@@ -35,9 +35,16 @@ class NotesSeeder extends Seeder
             ],
             [
                 'title' => Str::random(10),
-                'description' => Str::random(10)." [Underline]".Str::random(4)."[/UnderLine]",
+                'description' => Str::random(10)." [Underline]".Str::random(4)."[/Underline]",
                 'author' => null,
                 'category' => 3,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'title' => Str::random(15),
+                'description' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et tincidunt nibh. Sed at feugiat massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                'author' => null,
                 'created_at' => now(),
                 'updated_at' => now()
             ]

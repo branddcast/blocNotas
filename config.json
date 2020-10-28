@@ -1,0 +1,16 @@
+{
+    "HTMLTags":[
+        {
+            "tags": ["<b>", "</b>"],
+            "replace": ["[Bold]", "[/Bold]"]
+        },
+        {
+            "tags": ["<i>", "</i>"],
+            "replace": ["[Italic]", "[/Italic]"]
+        },
+        {
+            "tags": ["<u>", "</u>"],
+            "replace": ["[Underline]", "[/Underline]"]
+        }
+    ]
+}
