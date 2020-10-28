@@ -29,3 +29,4 @@ Route::get('notes/add', [NotesController::class, 'create']);
 Route::post('notes/delete/{id}', [NotesController::class, 'destroy']);
 Route::get('filter/author/{id}', [NotesController::class, 'filterByAuthor']);
 Route::get('filter/date/{date}', [NotesController::class, 'filterByDate']);
+Route::get('filter/category/{id}', [NotesController::class, 'filterByCategory']);

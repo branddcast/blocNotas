@@ -31,3 +31,16 @@ function findHTMLTags($text){
 
     return $tagsNote;
 }
+
+function categoryIcon($category) {
+    switch($category){
+        case 'Comidas': 
+            return '<i class="fas fa-utensils"></i>';
+        case 'Viajes':
+            return '<i class="fas fa-plane"></i>';
+        case 'Trabajo':
+            return '<i class="fas fa-briefcase"></i>';
+        default:
+            return '<i class="far fa-comment-dots"></i>';
+    }
+}

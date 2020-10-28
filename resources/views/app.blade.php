@@ -11,8 +11,8 @@
         <script src="{{asset('responsive_waterfall.js')}}"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{url('/')}}">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <a class="navbar-brand font-weight-bold" href="{{url('/')}}">
                 Bloc de Notas
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">

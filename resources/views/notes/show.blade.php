@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="card">
-                <form id="saveNote" method="POST" action="{{url('notes/save')}}">
+                <form id="saveNote" method="POST" action="{{url('notes/save')}}" class="mb-0">
                 @csrf
                 <div class="card-header" style="display: flexbox; position: relative">
                     @if(isset($editable) || isset($create))
@@ -60,7 +60,7 @@
                 </div>
                 <div class="card-body">
                     <label class="font-weight-bold">Descripción</label>
-                    <textarea id="description" required name="description" placeholder="Descripción" style="border: 1px solid #ddd; border-radius: 3px; padding: 10px; width: 100%; max-height: 300px" @if(isset($editable) === false && empty($create) === true) disabled="true" @endif>{{$note->description ?? ''}}</textarea>
+                    <textarea id="description" required name="description" placeholder="Descripción" style="border: 1px solid #ddd; border-radius: 3px; padding: 10px; width: 100%; height: 250px; max-height: 250px" @if(isset($editable) === false && empty($create) === true) disabled="true" @endif>{{$note->description ?? ''}}</textarea>
                     @if(isset($editable) || isset($create))
                     <div class="row">
                         <div class="col-md-7 align-self-end">
@@ -90,11 +90,14 @@
                     </div>
                     <div class="border-bottom mb-2"></div>
                     @endisset --}}
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row justify-content-between">
+                        <div class="col-md-auto">
                             {{(isset($note) && $note->author != null)? $note->author_->name: 'Anónimo'}}
                         </div>
-                        <div class="col-md-6 text-right">
+                        <div class="col-md-1 text-center align-self-center">
+                            {!! categoryIcon((($note->category != null)?$note->category_->title:'Desconocida')) !!}
+                        </div>
+                        <div class="col-md-auto text-right">
                             {{\Carbon\Carbon::parse(strtotime((isset($note->created_at))? $note->created_at: time()))->formatLocalized('%b %d, %Y')}}
                         </div>
                     </div>
