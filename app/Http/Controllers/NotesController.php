@@ -24,9 +24,11 @@ class NotesController extends Controller
         $filter = ($filter === '0')? null: $filter;
 
         $notes = Note::where('author', $filter)->paginate(15);
+        if($notes->count() == 0) abort(404);
         $filterOptions = new \stdClass();
         $filterOptions->filter = 'Autor';
-        $filterOptions->value = Note::where('author', $filter)->first()->author_->name;
+        $filterOptions->value = ($filter != null)? Note::where('author', $filter)->first()->author_->title: 'Anónimo';
+        // Note::where('author', $filter)->first()->author_->name;
         return view('notes.index', ['notes' => $notes, 'filter' => $filterOptions]);
     }
 
@@ -34,6 +36,7 @@ class NotesController extends Controller
 
         $filter = \Carbon\Carbon::createFromFormat('d-m-Y', $filter)->format('Y-m-d');
         $notes = Note::where('created_at', 'like' ,$filter."%")->paginate(15);
+        if($notes->count() == 0) abort(404);
         $filterOptions = new \stdClass();
         $filterOptions->filter = 'Fecha';
         $filterOptions->value = $filter;
@@ -44,6 +47,7 @@ class NotesController extends Controller
         $filter = ($filter === '0')? null: $filter;
 
         $notes = Note::where('category',$filter)->paginate(15);
+        if($notes->count() == 0) abort(404);
         $filterOptions = new \stdClass();
         $filterOptions->filter = 'Categoría';
         $filterOptions->value = ($filter != null)? Note::where('category', $filter)->first()->category_->title: 'Desconocida';

@@ -81,22 +81,24 @@
                 </div>
                 <div class="card-footer">
                     {{-- @isset($editable)
-                    <div class="row mb-2">
+                    <!--<div class="row mb-2">
                         <div class="col-md-auto">
                             <button onclick="getSelectionHTML('b')" class="boton_html_tag mr-2 @php if(array_search("[Bold]", $tags) !== false) echo 'boton_html_tag_active' @endphp"><i class="fas fa-bold"></i></button>
                             <button onclick="getSelectionHTML('i')" class="boton_html_tag mr-2 @php if(array_search("[Italic]", $tags) !== false) echo 'boton_html_tag_active' @endphp"><i class="fas fa-italic"></i></button>
                             <button onclick="getSelectionHTML('u')" class="boton_html_tag mr-2 @php if(array_search("[Underline]", $tags) !== false) echo 'boton_html_tag_active' @endphp"><i class="fas fa-underline"></i></button>
                         </div>
                     </div>
-                    <div class="border-bottom mb-2"></div>
+                    <div class="border-bottom mb-2"></div>-->
                     @endisset --}}
                     <div class="row justify-content-between">
                         <div class="col-md-auto">
                             {{(isset($note) && $note->author != null)? $note->author_->name: 'Anónimo'}}
                         </div>
+                        @isset($note)
                         <div class="col-md-1 text-center align-self-center">
                             {!! categoryIcon((($note->category != null)?$note->category_->title:'Desconocida')) !!}
                         </div>
+                        @endisset
                         <div class="col-md-auto text-right">
                             {{\Carbon\Carbon::parse(strtotime((isset($note->created_at))? $note->created_at: time()))->formatLocalized('%b %d, %Y')}}
                         </div>

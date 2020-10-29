@@ -28,7 +28,7 @@
             <div class="content">
                 <div class="card mb-3 shadow-lg {{'card-'.(($note->category != null)? $note->category_->title: 'General')}}">
                     <div class="card-header" style="display: flexbox; position: relative">
-                        <span style="padding-right: 20px"><a style="text-decoration: none; color: currentColor" href="{{url('notes/view/'.$note->id)}}">d jhgfdsj fgsjdf dsjfd hhh {{$note->title}}</a></span>
+                        <span style="padding-right: 20px"><a style="text-decoration: none; color: currentColor" href="{{url('notes/view/'.$note->id)}}">{{$note->title}}</a></span>
                         <a style="text-decoration: none; color: currentColor" href="#" onclick="javascript:deleteNote({{$note->id}});"><i class="fas fa-times" style="align-items: center; position: absolute; right: 15px; top: 15px; cursor: pointer"></i></a>
                     </div>
                     <div class="card-body">
